@@ -11,3 +11,7 @@ button{
       margin-top: 20px;
    padding: 0 5px;
 }
+
+.changeColor{
+    background-color: cornflowerblue;
+}

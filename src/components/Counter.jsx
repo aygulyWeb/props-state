@@ -5,7 +5,8 @@ class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            count: 0
+            count: 0,
+            h1: ''
         }
         this.increment = this.increment.bind(this);
         this.increment2 = this.increment2.bind(this);
@@ -29,10 +30,16 @@ class Counter extends React.Component {
         this.setState({count: this.state.count - 10})
     }
 
+    // changeColor(){
+    //     if (this.state.count < 0) {
+    //         this.state.h1='black'
+    //     }
+    // }
     render() {
         return (
             <div className='container'>
-                <h1 style={{backgroundColor: 'blue'}}>Вода {this.state.count}</h1>
+                <h1 style={{backgroundColor: this.state.count >= 0 ? this.state.h1 = 'blue' : this.state.h1 = 'cornflowerblue'}}>
+                    {this.state.count >= 0 ? 'Вода' : 'Лёд'} {this.state.count}</h1>
                 <button onClick={this.increment}>+</button>
                 <button onClick={this.increment2}>+10</button>
                 <button onClick={this.decrement}>-</button>
